@@ -32,6 +32,9 @@
                 gridItems.style.opacity=1;
             })
         })
+
+        
+        
         
 
         for (let i=0; i<256; i++){
@@ -39,12 +42,12 @@
             gridItem.classList.add('grid-item');
             gridContainer.appendChild(gridItem);
 
-            let opacity=1;
+            gridItem.style.opacity=1;
 
             gridItem.addEventListener('mouseenter',()=>{
-                if (opacity>0){
-                    opacity-=0.1;
-                    gridItem.style.opacity=opacity;
+                if (gridItem.style.opacity>0){
+                    gridItem.style.opacity-=0.1;
+                    
                 }
         
             })
