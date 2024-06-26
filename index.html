@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="reset">Reset Sketch Board</button>
     <div id="container"></div>
 
     <script>
@@ -18,10 +19,32 @@
 
         container.appendChild(gridContainer);
 
+
+        const resetButton=document.getElementById('reset');
+        
+        //To ensure you're selecting elements dynamically after they've been 
+        //created or modified, place the selection inside the function or event 
+        //listener that interacts with these elements. For example:
+
+        resetButton.addEventListener('click',()=>{
+            const gridItems=document.querySelectorAll('.grid-item');
+            gridItems.forEach(item=>{
+                item.style.backgroundColor='';
+            })
+        })
+        
+
         for (let i=0; i<256; i++){
             const gridItem=document.createElement('div');
             gridItem.classList.add('grid-item');
             gridContainer.appendChild(gridItem);
+
+
+            gridItem.addEventListener('mouseenter',()=>{
+        
+                gridItem.style.backgroundColor='blue';
+        
+            })
 
         }
 
