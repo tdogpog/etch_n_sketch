@@ -21,15 +21,15 @@
 
 
         const resetButton=document.getElementById('reset');
-        
+
         //To ensure you're selecting elements dynamically after they've been 
         //created or modified, place the selection inside the function or event 
         //listener that interacts with these elements. For example:
 
         resetButton.addEventListener('click',()=>{
             const gridItems=document.querySelectorAll('.grid-item');
-            gridItems.forEach(item=>{
-                item.style.backgroundColor='';
+            gridItems.forEach(gridItems=>{
+                gridItems.style.opacity=1;
             })
         })
         
@@ -39,12 +39,16 @@
             gridItem.classList.add('grid-item');
             gridContainer.appendChild(gridItem);
 
+            let opacity=1;
 
             gridItem.addEventListener('mouseenter',()=>{
-        
-                gridItem.style.backgroundColor='blue';
+                if (opacity>0){
+                    opacity-=0.1;
+                    gridItem.style.opacity=opacity;
+                }
         
             })
+            
 
         }
 

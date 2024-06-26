@@ -26,4 +26,7 @@
     height:calc(100%/16);
     border: 1px solid black;
     box-sizing: border-box;
+    background-color: black;
+    opacity: 1;
+
 }
