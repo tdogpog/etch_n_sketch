@@ -1,7 +1,9 @@
-.body{
+#container{
 
     display: flex;
     justify-content: center;
+    height:100vh;
+
     
 } 
 
@@ -10,13 +12,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 900px;
-    height: 900px;
+    width: 60%;
+    height: 60%;
     margin: 100px;
 }
 
 
 
-.gridItem{
+.grid-item{
     display: flex;
+    width:calc(100%/16);
+    height:calc(100%/16);
 }
